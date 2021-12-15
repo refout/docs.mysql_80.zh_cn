@@ -5,7 +5,6 @@ export default defineUserConfig<DefaultThemeOptions>({
     lang: 'en-US',
     title: 'refout',
     description: 'refout.github.io github-pages',
-    dest: 'dist',
     port: 1030,
     //主题配置
     themeConfig: {
