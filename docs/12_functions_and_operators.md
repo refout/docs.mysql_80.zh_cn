@@ -12,75 +12,79 @@
 
 ## [12.6 Numeric Functions and Operators](https://dev.mysql.com/doc/refman/8.0/en/numeric-functions.html)
 
+### 12.6.2 数学函数
+
+#### [CONV(*N*,*from_base*,to_base)](https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_conv)
+
 ## [12.7 Date and Time Functions](https://dev.mysql.com/doc/refman/8.0/en/date-and-time-functions.html)
 
 ## [12.8 字符串函数和运算符](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html)
 
 > Table 12.12 字符串函数和运算符
 
-| 名称                                | 描述                                                                                                                                 |
-|:----------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------|
-| [`ASCII()`](<#asciistr>)          | 返回字符串最左边字符的ASCII码十进制值                                                                                                              |
-| [`BIN()`](<#BIN()>)               | 返回数字的二进制的字符串表示形式                                                                                                                   |
-| [`BIT_LENGTH()`](<#BIT_LENGTH()>) | 返回参数的长度（单位：bit）                                                                                                                    |
-| [`CHAR()`](<#CHAR()>)             | 返回传递的每个整数参数所对应的字符                                                                                                                  |
-| [`CHAR_LENGTH()`]()               | Return number of characters in argument                                                                                            |
-| [`CHARACTER_LENGTH()`]()          | Synonym for CHAR_LENGTH()                                                                                                          |
-| [`CONCAT()`]()                    | Return concatenated string                                                                                                         |
-| [`CONCAT_WS()`]()                 | Return concatenate with separator                                                                                                  |
-| [`ELT()`]()                       | Return string at index number                                                                                                      |
+| 名称                              | 描述                                                         |
+| :-------------------------------- | :----------------------------------------------------------- |
+| [`ASCII()`](<#asciistr>)          | 返回字符串最左边字符的ASCII码十进制值                        |
+| [`BIN()`](<#binn>)                | 返回数字的二进制的字符串表示形式                             |
+| [`BIT_LENGTH()`](<#BIT_LENGTH()>) | 返回参数的长度（单位：bit）                                  |
+| [`CHAR()`](<#charnusing>)         | 返回传递的每个整数参数所对应的字符                           |
+| [`CHAR_LENGTH()`]()               | Return number of characters in argument                      |
+| [`CHARACTER_LENGTH()`]()          | Synonym for CHAR_LENGTH()                                    |
+| [`CONCAT()`]()                    | Return concatenated string                                   |
+| [`CONCAT_WS()`]()                 | Return concatenate with separator                            |
+| [`ELT()`]()                       | Return string at index number                                |
 | [`EXPORT_SET()`]()                | Return a string such that for every bit set in the value bits, you get an on string and for every unset bit, you get an off string |
-| [`FIELD()`]()                     | Index (position) of first argument in subsequent arguments                                                                         |
-| [`FIND_IN_SET()`]()               | Index (position) of first argument within second argument                                                                          |
-| [`FORMAT()`]()                    | Return a number formatted to specified number of decimal places                                                                    |
-| [`FROM_BASE64()`]()               | Decode base64 encoded string and return result                                                                                     |
-| [`HEX()`]()                       | Hexadecimal representation of decimal or string value                                                                              |
-| [`INSERT()`]()                    | Insert substring at specified position up to specified number of characters                                                        |
-| [`INSTR()`]()                     | Return the index of the first occurrence of substring                                                                              |
-| [`LCASE()`]()                     | Synonym for LOWER()                                                                                                                |
-| [`LEFT()`]()                      | Return the leftmost number of characters as specified                                                                              |
-| [`LENGTH()`]()                    | Return the length of a string in bytes                                                                                             |
-| [`LIKE`]()                        | Simple pattern matching                                                                                                            |
-| [`LOAD_FILE()`]()                 | Load the named file                                                                                                                |
-| [`LOCATE()`]()                    | Return the position of the first occurrence of substring                                                                           |
-| [`LOWER()`]()                     | Return the argument in lowercase                                                                                                   |
-| [`LPAD()`]()                      | Return the string argument, left-padded with the specified string                                                                  |
-| [`LTRIM()`]()                     | Remove leading spaces                                                                                                              |
-| [`MAKE_SET()`]()                  | Return a set of comma-separated strings that have the corresponding bit in bits set                                                |
-| [`MATCH()`]()                     | Perform full-text search                                                                                                           |
-| [`MID()`]()                       | Return a substring starting from the specified position                                                                            |
-| [`NOT LIKE`]()                    | Negation of simple pattern matching                                                                                                |
-| [`NOT REGEXP`]()                  | Negation of REGEXP                                                                                                                 |
-| [`OCT()`]()                       | Return a string containing octal representation of a number                                                                        |
-| [`OCTET_LENGTH()`]()              | Synonym for LENGTH()                                                                                                               |
-| [`ORD()`]()                       | Return character code for leftmost character of the argument                                                                       |
-| [`POSITION()`]()                  | Synonym for LOCATE()                                                                                                               |
-| [`QUOTE()`]()                     | Escape the argument for use in an SQL statement                                                                                    |
-| [`REGEXP`]()                      | Whether string matches regular expression                                                                                          |
-| [`REGEXP_INSTR()`]()              | Starting index of substring matching regular expression                                                                            |
-| [`REGEXP_LIKE()`]()               | Whether string matches regular expression                                                                                          |
-| [`REGEXP_REPLACE()`]()            | Replace substrings matching regular expression                                                                                     |
-| [`REGEXP_SUBSTR()`]()             | Return substring matching regular expression                                                                                       |
-| [`REPEAT()`]()                    | Repeat a string the specified number of times                                                                                      |
-| [`REPLACE()`]()                   | Replace occurrences of a specified string                                                                                          |
-| [`REVERSE()`]()                   | Reverse the characters in a string                                                                                                 |
-| [`RIGHT()`]()                     | Return the specified rightmost number of characters                                                                                |
-| [`RLIKE`]()                       | Whether string matches regular expression                                                                                          |
-| [`RPAD()`]()                      | Append string the specified number of times                                                                                        |
-| [`RTRIM()`]()                     | Remove trailing spaces                                                                                                             |
-| [`SOUNDEX()`]()                   | Return a soundex string                                                                                                            |
-| [`SOUNDS LIKE`]()                 | Compare sounds                                                                                                                     |
-| [`SPACE()`]()                     | Return a string of the specified number of spaces                                                                                  |
-| [`STRCMP()`]()                    | Compare two strings                                                                                                                |
-| [`SUBSTR()`]()                    | Return the substring as specified                                                                                                  |
-| [`SUBSTRING()`]()                 | Return the substring as specified                                                                                                  |
-| [`SUBSTRING_INDEX()`]()           | Return a substring from a string before the specified number of occurrences of the delimiter                                       |
-| [`TO_BASE64()`]()                 | Return the argument converted to a base-64 string                                                                                  |
-| [`TRIM()`]()                      | Remove leading and trailing spaces                                                                                                 |
-| [`UCASE()`]()                     | Synonym for UPPER()                                                                                                                |
-| [`UNHEX()`]()                     | Return a string containing hex representation of a number                                                                          |
-| [`UPPER()`]()                     | Convert to uppercase                                                                                                               |
-| [`WEIGHT_STRING()`]()             | Return the weight string for a string                                                                                              |
+| [`FIELD()`]()                     | Index (position) of first argument in subsequent arguments   |
+| [`FIND_IN_SET()`]()               | Index (position) of first argument within second argument    |
+| [`FORMAT()`]()                    | Return a number formatted to specified number of decimal places |
+| [`FROM_BASE64()`]()               | Decode base64 encoded string and return result               |
+| [`HEX()`]()                       | Hexadecimal representation of decimal or string value        |
+| [`INSERT()`]()                    | Insert substring at specified position up to specified number of characters |
+| [`INSTR()`]()                     | Return the index of the first occurrence of substring        |
+| [`LCASE()`]()                     | Synonym for LOWER()                                          |
+| [`LEFT()`]()                      | Return the leftmost number of characters as specified        |
+| [`LENGTH()`]()                    | Return the length of a string in bytes                       |
+| [`LIKE`]()                        | Simple pattern matching                                      |
+| [`LOAD_FILE()`]()                 | Load the named file                                          |
+| [`LOCATE()`]()                    | Return the position of the first occurrence of substring     |
+| [`LOWER()`]()                     | Return the argument in lowercase                             |
+| [`LPAD()`]()                      | Return the string argument, left-padded with the specified string |
+| [`LTRIM()`]()                     | Remove leading spaces                                        |
+| [`MAKE_SET()`]()                  | Return a set of comma-separated strings that have the corresponding bit in bits set |
+| [`MATCH()`]()                     | Perform full-text search                                     |
+| [`MID()`]()                       | Return a substring starting from the specified position      |
+| [`NOT LIKE`]()                    | Negation of simple pattern matching                          |
+| [`NOT REGEXP`]()                  | Negation of REGEXP                                           |
+| [`OCT()`]()                       | Return a string containing octal representation of a number  |
+| [`OCTET_LENGTH()`]()              | Synonym for LENGTH()                                         |
+| [`ORD()`]()                       | Return character code for leftmost character of the argument |
+| [`POSITION()`]()                  | Synonym for LOCATE()                                         |
+| [`QUOTE()`]()                     | Escape the argument for use in an SQL statement              |
+| [`REGEXP`]()                      | Whether string matches regular expression                    |
+| [`REGEXP_INSTR()`]()              | Starting index of substring matching regular expression      |
+| [`REGEXP_LIKE()`]()               | Whether string matches regular expression                    |
+| [`REGEXP_REPLACE()`]()            | Replace substrings matching regular expression               |
+| [`REGEXP_SUBSTR()`]()             | Return substring matching regular expression                 |
+| [`REPEAT()`]()                    | Repeat a string the specified number of times                |
+| [`REPLACE()`]()                   | Replace occurrences of a specified string                    |
+| [`REVERSE()`]()                   | Reverse the characters in a string                           |
+| [`RIGHT()`]()                     | Return the specified rightmost number of characters          |
+| [`RLIKE`]()                       | Whether string matches regular expression                    |
+| [`RPAD()`]()                      | Append string the specified number of times                  |
+| [`RTRIM()`]()                     | Remove trailing spaces                                       |
+| [`SOUNDEX()`]()                   | Return a soundex string                                      |
+| [`SOUNDS LIKE`]()                 | Compare sounds                                               |
+| [`SPACE()`]()                     | Return a string of the specified number of spaces            |
+| [`STRCMP()`]()                    | Compare two strings                                          |
+| [`SUBSTR()`]()                    | Return the substring as specified                            |
+| [`SUBSTRING()`]()                 | Return the substring as specified                            |
+| [`SUBSTRING_INDEX()`]()           | Return a substring from a string before the specified number of occurrences of the delimiter |
+| [`TO_BASE64()`]()                 | Return the argument converted to a base-64 string            |
+| [`TRIM()`]()                      | Remove leading and trailing spaces                           |
+| [`UCASE()`]()                     | Synonym for UPPER()                                          |
+| [`UNHEX()`]()                     | Return a string containing hex representation of a number    |
+| [`UPPER()`]()                     | Convert to uppercase                                         |
+| [`WEIGHT_STRING()`]()             | Return the weight string for a string                        |
 
 如果结果长度大于系统变量 `max_allowed_packet` 的值，则字符串函数返回 `NULL` 。参见[5.1.1 配置服务器](<5_mysql_server_administration.md#5.1.1 配置服务器>)。
 
@@ -88,7 +92,7 @@
 
 对于带长度参数的函数，非整数参数四舍五入为最接近的整数。
 
-### ASCII(_str_)
+#### [ASCII(str)](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_ascii)
 
 返回字符串 `str` 最左边的字符的 ASCII 十进制值。如果 `str` 为空字符串则返回 `0` 。如果 _`str`_ 是 `NULL` 则返回 `NULL` 。`ASCII()` 适用于 8 位字符
 
@@ -109,84 +113,66 @@ mysql> select ASCII('');
 
 另见 [`ORD()`](#ordstr) 函数。
 
-- [`BIN(`N`)`](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_bin)
+#### [BIN(N)](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_bin)
 
-  Returns a string representation of the binary value of _`N`_, where _`N`_ is a
-  longlong ([`BIGINT`](https://dev.mysql.com/doc/refman/8.0/en/integer-types.html)) number. This is equivalent
-  to [`CONV(*`N`*,10,2)`](https://dev.mysql.com/doc/refman/8.0/en/mathematical-functions.html#function_conv).
-  Returns `NULL` if _`N`_ is `NULL`.
+返回 `N` 的二进制值的字符串表示形式，其中 `N` 是长整型（ `BIGINT` ）数值。相当于 [`CONV(N, 10, 2)`](<#convnfrombasetobase>)。如果 `N` 是 `NULL` 则返回 `NULL` 。
 
 ``` sql
 mysql> SELECT BIN(12);
        -> '1100'
 ```
 
-- [`BIT_LENGTH(*`str`*)`](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_bit-length)
+#### [BIT_LENGTH(str)](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_bit-length)
 
-  Returns the length of the string _`str`_ in bits.
+返回字符串 `str` 的长度（单位：`bit`）。
 
-  ```sql
-  mysql> SELECT BIT_LENGTH('text');
-          -> 32
-  ```
+```sql
+mysql> SELECT BIT_LENGTH('text');
+        -> 32
+```
 
-- [`CHAR(*`N`*,... [USING *`charset_name`*\])`](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char)
+#### [CHAR(N,... [USING charset_name])](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char)
 
-  [`CHAR()`](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char) interprets each argument _`N`_
-  as an integer and returns a string consisting of the characters given by the code values of those integers. `NULL`
-  values are skipped.
+`CHAR()` 将每一个参数 `N` 解释为一个整数，并返回一个字符串，该字符串由这些整数所代表的 `ASCII` 字符组成。如果 `N` 为 `NULL` 将被忽略。
 
-  ```sql
-  mysql> SELECT CHAR(77,121,83,81,'76');
-          -> 'MySQL'
-  mysql> SELECT CHAR(77,77.3,'77.3');
-          -> 'MMM'
-  ```
+```sql
+mysql> SELECT CHAR(77,121,83,81,'76');
+        -> 'MySQL'
+mysql> SELECT CHAR(77,77.3,'77.3');
+        -> 'MMM'
+```
 
-  [`CHAR()`](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char) arguments larger than 255 are
-  converted into multiple result bytes. For
-  example, [`CHAR(256)`](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char) is equivalent
-  to [`CHAR(1,0)`](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char),
-  and [`CHAR(256*256)`](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char) is equivalent
-  to [`CHAR(1,0,0)`](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char):
+`CHAR()` 的参数大于 `255` 将被转换为多个字节的结果。例如，`CHAR(256)` 等价于 `CHAR(1,0)` 、`CHAR(256*256)` 等价于 `CHAR(1,0,0)` ：
 
-  ```sql
-  mysql> SELECT HEX(CHAR(1,0)), HEX(CHAR(256));
-  +----------------+----------------+
-  | HEX(CHAR(1,0)) | HEX(CHAR(256)) |
-  +----------------+----------------+
-  | 0100           | 0100           |
-  +----------------+----------------+
-  mysql> SELECT HEX(CHAR(1,0,0)), HEX(CHAR(256*256));
-  +------------------+--------------------+
-  | HEX(CHAR(1,0,0)) | HEX(CHAR(256*256)) |
-  +------------------+--------------------+
-  | 010000           | 010000             |
-  +------------------+--------------------+
-  ```
+```sql
+mysql> SELECT HEX(CHAR(1,0)), HEX(CHAR(256));
++----------------+----------------+
+| HEX(CHAR(1,0)) | HEX(CHAR(256)) |
++----------------+----------------+
+| 0100           | 0100           |
++----------------+----------------+
+mysql> SELECT HEX(CHAR(1,0,0)), HEX(CHAR(256*256));
++------------------+--------------------+
+| HEX(CHAR(1,0,0)) | HEX(CHAR(256*256)) |
++------------------+--------------------+
+| 010000           | 010000             |
++------------------+--------------------+
+```
 
-  By default, [`CHAR()`](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char) returns a binary
-  string. To produce a string in a given character set, use the optional `USING` clause:
+默认情况下 `CHAR()` 返回一个二进制的字符串。如需要返回给定字符集的字符串，使用可选的 `USING` 子句：
 
-  ```sql
-  mysql> SELECT CHARSET(CHAR(X'65')), CHARSET(CHAR(X'65' USING utf8));
-  +----------------------+---------------------------------+
-  | CHARSET(CHAR(X'65')) | CHARSET(CHAR(X'65' USING utf8)) |
-  +----------------------+---------------------------------+
-  | binary               | utf8                            |
-  +----------------------+---------------------------------+
-  ```
+```sql
+mysql> SELECT CHARSET(CHAR(X'65')), CHARSET(CHAR(X'65' USING utf8));
++----------------------+---------------------------------+
+| CHARSET(CHAR(X'65')) | CHARSET(CHAR(X'65' USING utf8)) |
++----------------------+---------------------------------+
+| binary               | utf8                            |
++----------------------+---------------------------------+
+```
 
-  If `USING` is given and the result string is illegal for the given character set, a warning is issued. Also, if strict
-  SQL mode is enabled, the result
-  from [`CHAR()`](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char) becomes `NULL`.
+如果给出了 `USING` 并且结果字符串对于给定的字符集是非法的，则会发出警告。 此外，如果启用了严格的 `SQL` 模式，则 `CHAR()` 的结果将变为 `NULL`。
 
-  If [`CHAR()`](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char) is invoked from within
-  the [**mysql**](https://dev.mysql.com/doc/refman/8.0/en/mysql.html) client, binary strings display using hexadecimal
-  notation, depending on the value of
-  the [`--binary-as-hex`](https://dev.mysql.com/doc/refman/8.0/en/mysql-command-options.html#option_mysql_binary-as-hex)
-  . For more information about that option,
-  see [Section 4.5.1, “mysql — The MySQL Command-Line Client”](https://dev.mysql.com/doc/refman/8.0/en/mysql.html).
+如果 `CHAR()` 从 `mysql` 客户端中调用，则二进制字符串使用十六进制表示法显示，具体取决于 [`--binary-as-hex`](https://dev.mysql.com/doc/refman/8.0/en/mysql-command-options.html#option_mysql_binary-as-hex) 的值。 有关该选项的更多信息，请参阅[4.5.1 mysql — MySQL 命令行客户端](<4_mysql_programs#451_mysqlmysql命令行客户端>)。 
 
 - [`CHAR_LENGTH(*`str`*)`](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html#function_char-length)
 
